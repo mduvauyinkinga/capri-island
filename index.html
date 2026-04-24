@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capri Island — Relax. Dine. Escape.</title>
+    <meta name="description" content="Capri Island Restaurant in eMalahleni. Wood-fired pizza, cocktails, and island vibes.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="day-mode">
+
+    <!-- Grain Overlay -->
+    <div class="grain-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon"><i class="fas fa-umbrella-beach"></i></span>
+                <span class="logo-text">Capri Island</span>
+            </a>
+            
+            <div class="nav-right">
+                <div class="vibe-indicator" id="vibeIndicator">
+                    <span class="vibe-dot"></span>
+                    <span class="vibe-text" id="vibeText">Chill now</span>
+                </div>
+                
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle day/night mode">
+                    <i class="fas fa-sun" id="themeIcon"></i>
+                </button>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#menu" class="nav-link">Menu</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#reviews" class="nav-link">Reviews</a></li>
+                <li><a href="#highlights" class="nav-link">Highlights</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu"><i class="fas fa-times"></i></button>
+        <ul>
+            <li><a href="#menu" class="mobile-link">Menu</a></li>
+            <li><a href="#experience" class="mobile-link">Experience</a></li>
+            <li><a href="#reviews" class="mobile-link">Reviews</a></li>
+            <li><a href="#highlights" class="mobile-link">Highlights</a></li>
+            <li><a href="#contact" class="mobile-link">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero" id="hero">
+        <div class="hero-video-container">
+            <video autoplay muted loop playsinline class="hero-video" poster="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1920">
+                <source src="https://videos.pexels.com/video-files/4258624/4258624-uhd_2560_1440_24fps.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        
+        <div class="hero-content">
+            <p class="hero-tagline">eMalahleni's Island Escape</p>
+            <h1 class="hero-title">
+                Relax. Dine. Escape.
+            </h1>
+            <p class="hero-subtitle">Wood-fired pizza. Sunset cocktails. Pure relaxation.</p>
+            <div class="hero-cta-group">
+                <a href="#menu" class="btn btn-primary">
+                    <i class="fas fa-utensils"></i> View Menu
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <i class="fas fa-calendar-check"></i> Book a Table
+                </a>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- ==================== CHEF RECOMMENDS ==================== -->
+    <section class="chef-recommends" id="chefRecommends">
+        <div class="container">
+            <div class="recommend-card">
+                <div class="recommend-icon"><i class="fas fa-fire"></i></div>
+                <div class="recommend-content">
+                    <span class="recommend-label">Chef Recommends Tonight</span>
+                    <h3 class="recommend-item" id="chefRecommendItem">Seafood Platter</h3>
+                    <p class="recommend-desc" id="chefRecommendDesc">A coastal feast inspired by island living — fresh prawns, calamari, and line fish grilled to perfection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== INTERACTIVE MENU ==================== -->
+    <section class="menu-section" id="menu">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Menu</span>
+                <h2 class="section-title">Taste the Island</h2>
+                <p class="section-subtitle">Every dish tells a story. Every bite feels like a vacation.</p>
+            </div>
+            
+            <div class="menu-tabs">
+                <button class="menu-tab active" data-category="pizza"><i class="fas fa-pizza-slice"></i> Pizza</button>
+                <button class="menu-tab" data-category="grill"><i class="fas fa-drumstick-bite"></i> Grill</button>
+                <button class="menu-tab" data-category="seafood"><i class="fas fa-fish"></i> Seafood</button>
+                <button class="menu-tab" data-category="classics"><i class="fas fa-hamburger"></i> Classics</button>
+                <button class="menu-tab" data-category="drinks"><i class="fas fa-cocktail"></i> Drinks</button>
+            </div>
+            
+            <div class="menu-grid" id="menuGrid">
+                <!-- Pizza Items -->
+                <div class="menu-item" data-category="pizza">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400" alt="Meaty One Pizza">
+                        <div class="menu-item-badge">Wood-Fired</div>
+                    </div>
+                    <div class="menu-item-info">
+                        <h4>Meaty One</h4>
+                        <p class="menu-item-story">Smokey wood-fired crust loaded with pepperoni, bacon, and ground beef — a carnivore's island dream.</p>
+                        <span class="menu-item-price">R145</span>
+                    </div>
+                </div>
+                
+                <div class="menu-item" data-category="pizza">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400" alt="Margherita Pizza">
+                    </div>
+                    <div class="menu-item-info">
+                        <h4>Island Margherita</h4>
+                        <p class="menu-item-story">Simplicity perfected. Fresh buffalo mozzarella, San Marzano tomatoes, and basil from our garden.</p>
+                        <span class="menu-item-price">R98</span>
+                    </div>
+                </div>
+                
+                <!-- Grill Items -->
+                <div class="menu-item" data-category="grill">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=400" alt="T-Bone Steak">
+                        <div class="menu-item-badge">Chef's Pick</div>
+                    </div>
+                    <div class="menu-item-info">
+                        <h4>Flame-Grilled T-Bone</h4>
+                        <p class="menu-item-story">500g of prime aged beef, seared over open flames and basted with our signature herb butter.</p>
+                        <span class="menu-item-price">R220</span>
+                    </div>
+                </div>
+                
+                <div class="menu-item" data-category="grill">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=400" alt="Lamb Chops">
+                    </div>
+                    <div class="menu-item-info">
+                        <h4>Mediterranean Lamb Chops</h4>
+                        <p class="menu-item-story">Tender rack of lamb, marinated in rosemary, garlic, and olive oil. A taste of the Mediterranean coast.</p>
+                        <span class="menu-item-price">R195</span>
+                    </div>
+                </div>
+                
+                <!-- Seafood Items -->
+                <div class="menu-item" data-category="seafood">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=400" alt="Seafood Platter">
+                        <div class="menu-item-badge">Signature</div>
+                    </div>
+                    <div class="menu-item-info">
+                        <h4>Seafood Platter</h4>
+                        <p class="menu-item-story">A coastal feast inspired by island living — fresh prawns, calamari, and line fish grilled to perfection.</p>
+                        <span class="menu-item-price">R285</span>
+                    </div>
+                </div>
+                
+                <div class="menu-item" data-category="seafood">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400" alt="Grilled Prawns">
+                    </div>
+                    <div class="menu-item-info">
+                        <h4>Chili-Lime Prawns</h4>
+                        <p class="menu-item-story">Jumbo prawns flame-grilled and tossed in our zesty chili-lime glaze. Sweet heat in every bite.</p>
+                        <span class="menu-item-price">R165</span>
+                    </div>
+                </div>
+                
+                <!-- Classics Items -->
+                <div class="menu-item" data-category="classics">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400" alt="Dagwood Burger">
+                        <div class="menu-item-badge">Best Seller</div>
+                    </div>
+                    <div class="menu-item-info">
+                        <h4>The Dagwood</h4>
+                        <p class="menu-item-story">Our legendary double-patty stack with cheddar, bacon, caramelized onions, and secret island sauce.</p>
+                        <span class="menu-item-price">R135</span>
+                    </div>
+                </div>
+                
+                <div class="menu-item" data-category="classics">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=400" alt="Chicken Burger">
+                    </div>
+                    <div class="menu-item-info">
+                        <h4>Crispy Chicken Stack</h4>
+                        <p class="menu-item-story">Buttermilk-fried chicken breast, slaw, and sriracha mayo on a toasted brioche bun.</p>
+                        <span class="menu-item-price">R115</span>
+                    </div>
+                </div>
+                
+                <!-- Drinks Items -->
+                <div class="menu-item" data-category="drinks">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=400" alt="Mango Crusher">
+                        <div class="menu-item-badge">Refreshing</div>
+                    </div>
+                    <div class="menu-item-info">
+                        <h4>Mango Crusher</h4>
+                        <p class="menu-item-story">Fresh mango, passionfruit, and a hint of mint blended over crushed ice. Pure tropical bliss.</p>
+                        <span class="menu-item-price">R55</span>
+                    </div>
+                </div>
+                
+                <div class="menu-item" data-category="drinks">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1577805947697-89e18249d767?w=400" alt="Cocktail">
+                    </div>
+                    <div class="menu-item-info">
+                        <h4>Sunset Mojito</h4>
+                        <p class="menu-item-story">White rum, fresh lime, brown sugar, and hand-crushed mint. The perfect sundowner companion.</p>
+                        <span class="menu-item-price">R75</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SIGNATURE HIGHLIGHTS ==================== -->
+    <section class="highlights-section" id="highlights">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Signature</span>
+                <h2 class="section-title">What We're Known For</h2>
+                <p class="section-subtitle">Crowd favourites that keep our guests coming back.</p>
+            </div>
+            
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <div class="highlight-img">
+                        <img src="https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=600" alt="Seafood Platter">
+                    </div>
+                    <div class="highlight-info">
+                        <h4>Seafood Platter</h4>
+                        <p>Fresh prawns, calamari, and line fish — grilled to perfection.</p>
+                        <span class="highlight-price">R285</span>
+                    </div>
+                </div>
+                
+                <div class="highlight-card">
+                    <div class="highlight-img">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600" alt="The Dagwood">
+                    </div>
+                    <div class="highlight-info">
+                        <h4>The Dagwood</h4>
+                        <p>Double-patty, cheddar, bacon, and our secret island sauce.</p>
+                        <span class="highlight-price">R135</span>
+                    </div>
+                </div>
+                
+                <div class="highlight-card">
+                    <div class="highlight-img">
+                        <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600" alt="Meaty One">
+                    </div>
+                    <div class="highlight-info">
+                        <h4>Meaty One</h4>
+                        <p>Wood-fired pizza loaded with pepperoni, bacon, and ground beef.</p>
+                        <span class="highlight-price">R145</span>
+                    </div>
+                </div>
+                
+                <div class="highlight-card">
+                    <div class="highlight-img">
+                        <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=600" alt="Milkshakes">
+                    </div>
+                    <div class="highlight-info">
+                        <h4>Island Milkshakes</h4>
+                        <p>Thick, creamy, and topped with everything delicious.</p>
+                        <span class="highlight-price">From R45</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT / EXPERIENCE ==================== -->
+    <section class="experience-section" id="experience">
+        <div class="container">
+            <div class="experience-grid">
+                <div class="experience-content">
+                    <span class="section-label">The Experience</span>
+                    <h2 class="section-title">Simple. Fresh. Relaxed.</h2>
+                    <p class="experience-text">
+                        Capri Island offers a relaxed dining experience where quality food, great cocktails, and a calm atmosphere come together. Whether you're here for a wood-fired pizza at sunset or a lazy lunch with friends, every moment is designed to help you unwind.
+                    </p>
+                    <div class="experience-features">
+                        <div class="feature">
+                            <i class="fas fa-fire-burner"></i>
+                            <span>Freshly Prepared Meals</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-tree"></i>
+                            <span>Outdoor Seating</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-heart"></i>
+                            <span>Friendly Service</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="experience-image">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800" alt="Restaurant atmosphere">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== REVIEWS ==================== -->
+    <section class="reviews-section" id="reviews">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Testimonials</span>
+                <h2 class="section-title">What Our Guests Say</h2>
+            </div>
+            
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"The pizza is to die for! Wood fired, affordable and delicious. We keep coming back every weekend."</p>
+                    <div class="review-author">
+                        <span class="author-name">Sarah M.</span>
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Best cocktails in eMalahleni. The atmosphere is calm and the staff make you feel right at home."</p>
+                    <div class="review-author">
+                        <span class="author-name">James K.</span>
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="review-text">"The Dagwood burger is massive and flavourful. Great place to relax with friends after work."</p>
+                    <div class="review-author">
+                        <span class="author-name">Thabo N.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Find Us</span>
+                <h2 class="section-title">Come Visit</h2>
+                <p class="section-subtitle">Join us for great food and a relaxed atmosphere.</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-block">
+                        <i class="fas fa-location-dot"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>CNR MANDELA& 118 AMARYLLIS ST, EMALAHLENI</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-block">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Hours</h4>
+                            <p>Mon–Thu: 07:00 – 21:00</p>
+                            <p>Fri–Sat: 07:00 – 00:00</p>
+<p>Sun: 07:00 – 21:00</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-block">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p><a href="tel:+27615828865">+27 615 828 865</a></p>
+                        </div>
+                    </div>
+                    
+                    <a href="tel:+27615828865" class="btn btn-primary">
+                        <i class="fas fa-phone"></i> Call to Book
+                    </a>
+                </div>
+                
+                <div class="contact-map">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114584.8192698583!2d29.0132!3d-25.8720!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ee8f6f5e5f5e5f5%3A0x5f5f5f5f5f5f5f5f!2seMalahleni!5e0!3m2!1sen!2sza!4v1600000000000!5m2!1sen!2sza" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <span class="logo-icon"><i class="fas fa-umbrella-beach"></i></span>
+                        <span class="logo-text">Capri Island</span>
+                    </a>
+                    <p>Your place to unwind.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#reviews">Reviews</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Capri Island. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+
